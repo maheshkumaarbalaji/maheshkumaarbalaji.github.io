@@ -1,1 +1,1 @@
-# Mahesh Kumaar Balaji
+## ![Portfolio Logo](/Images/favicon.ico) Mahesh Kumaar Balaji

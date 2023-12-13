@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+    <head>
+        <title>Mahesh Kumaar Balaji - Portfolio</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <link rel="stylesheet" href="CSS/style.css" />
+        <link rel="icon" type="image/x-icon" href="Images/favicon.ico" />
+        <script defer src="JS/brands.min.js"></script>
+        <script defer src="JS/fontawesome.js"></script>
+    </head>
+    <body>
+        <header>
+            <img src="Images/logo.jpeg" id="PortfolioLogo" alt="Portfolio Logo"/>
+            <span id="PortfolioTitle">My Portfolio</span>
+            <ul id="NavigationMenu">
+                <li><a href="#Home" class="nav-link default" id="NavHome">HOME</a></li>
+                <li><a href="#AboutMe" class="nav-link" id="NavAboutMe">ABOUT ME</a></li>
+                <li><a href="#Projects" class="nav-link" id="NavProjects">PROJECTS</a></li>
+                <li><a href="#Contact" class="nav-link" id="NavContact">CONTACT</a></li>
+            </ul>
+        </header>
+        <div id="Home">
+            <h1 id="HomeCoverGreetings">HEY, I'M MAHESH KUMAAR <span style="color: #ed8805;">BALAJI</span>.</h1>
+            <p id="ShortDescription">Back end development, Workflow Automation and Lowcode development.</p>
+            <div id="ProjectsBtnParent">
+                <button id="btnNavToProjects" class="btn">Projects</button>
+            </div>
+        </div>
+        <div id="AboutMe">
+            <h1 class="section-title">ABOUT ME</h1>
+            <div class="underline-block">
+                <span class="underline">===============</span>
+            </div>
+            <div id="AboutMeBody">
+                <div id="GetToKnowMe">
+                    <h3>Get to know me !</h3>
+                    <p>I am a persistent, detail-oriented software engineer with 5 years of industry experience in orchestrating key business processes; and in the maintenance of business process workflows through corrective software maintenance. <br /><br />Career highlights include employing FMEA methodology for risk assessment on 100+ ETL workloads, thereby reducing the risk associated by 47%; and facilitating the automation of customer invoice processing in 16 countries across Europe and America. Some of my personal projects have been shown in the <b>Projects</b> section of this page.</p>
+                    <div id="ContactBtnParent">
+                        <button id="btnNavToContact" class="btn">Contact</button>
+                    </div>
+                </div>
+                <div id="MySkills">
+                    <h3>My Skills</h3>
+                    <div id="SkillListSection">
+                        <span class="skill-list-item">HTML5</span>
+                        <span class="skill-list-item">CSS3</span>
+                        <span class="skill-list-item">Javascript</span>
+                        <span class="skill-list-item">Bootstrap</span>
+                        <span class="skill-list-item">Angular</span>
+                        <span class="skill-list-item">Node.js</span>
+                        <span class="skill-list-item">C#</span>
+                        <span class="skill-list-item">.NET Development</span>
+                        <span class="skill-list-item">Microsoft Azure</span>
+                        <span class="skill-list-item">SQL Server</span>
+                        <span class="skill-list-item">SharePoint</span>
+                        <span class="skill-list-item">Algorithms</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="Projects">
+            <h1 class="section-title">PROJECTS</h3>
+            <div class="underline-block">
+                <span class="underline">===============</span>
+            </div>
+        </div>
+        <div id="Contact">
+            <h1 class="section-title">CONTACT</h3>
+            <div class="underline-block">
+                <span class="underline">===============</span>
+            </div>
+            <div id="ContactBody">
+                <span id="ContactMessage">If you would like to reach out to me, please fill up the form below and I will get back to you as soon as possible.</span>
+                <div id="ContactFormContainer">
+                    <form id="ContactForm">
+                        <div class="form-group">
+                            <input type="text" name="Name" id="UserDisplayName" class="form-control" placeholder="Name" />
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="Email" id="UserEmail" class="form-control" placeholder="Email Address" />
+                        </div>
+                        <div class="form-group">
+                            <textarea name="Message" id="UserMessage" class="form-control" placeholder="Message"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <button type="button" class="btn" id="ContactFormSubmitBtn">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <span>Mahesh Kumaar Balaji</span>
+            <span>Application Developer | Software Engineer</span>
+            <div id="SocialIconsSection">
+                <a href="https://github.com/maheshkumaarbalaji" target="_blank" class="icons"><i class="fa-brands fa-github"></i></a>&nbsp;&nbsp;
+                <a href="https://www.linkedin.com/in/maheshkumaarbalaji/" target="_blank" class="icons"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+        </footer>
+        <script type="text/javascript">
+            window.onload = function(){
+                document.getElementById("NavigationMenu").addEventListener('click',event => {
+                    let elements = document.getElementsByClassName("nav-link");
+                    for(let index = 0; index < elements.length; index++)
+                    {
+                        if(elements[index].classList.contains("default"))
+                        {
+                            elements[index].classList.toggle("default");
+                        }
+                    }
+                    document.getElementById(event.target.id).classList.toggle("default");
+                });
+
+                document.getElementById("btnNavToProjects").addEventListener('click',event => {
+                    document.getElementById("Projects").scrollIntoView(true);
+                });
+
+                document.getElementById("btnNavToContact").addEventListener('click',event => {
+                    document.getElementById("Contact").scrollIntoView(true);
+                });
+            };
+        </script>
+    </body>
+</html>

@@ -1,0 +1,363 @@
+html{
+    font-size: 14px;
+    scroll-behavior: smooth;
+}
+
+body{
+    display: block;
+    width: 100vw;
+    min-height: 90vh;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #f2f0f0;
+}
+
+header{
+    height: 10vh;
+    width: 100%;
+    padding: 1vh;
+    display: flex;
+    box-sizing: border-box;
+    border-bottom: 1px solid #ed8805;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+#PortfolioLogo{
+    height: 8vh;
+    width: 8vh;
+}
+
+#PortfolioTitle{
+    font-weight: bold;
+    font-size: 1.8rem;
+    margin-left: 1rem;
+}
+
+#NavigationMenu{
+    list-style-type: none;
+    margin-left: auto;
+    margin-right: 1rem;
+    padding: 0;
+    display: inline-flex;
+    box-sizing: border-box;
+}
+
+#NavigationMenu > li{
+    margin-left: 1.5rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+#NavigationMenu a{
+    text-decoration: none;
+    color: black;
+    border-bottom: 3px solid #c2bebc;
+}
+
+a.default, a:hover{
+    border-bottom: 3px solid #ed8805!important;
+}
+
+#Home{
+    width: 100%;
+    display: block;
+    box-sizing: border-box;
+    background-image: url("../Images/Home-Background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 90vh;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid #ed8805;
+    border-bottom: 1px solid #ed8805;
+}
+
+#HomeCoverGreetings{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 4rem;
+    text-align: center;
+    margin-top: 6.2rem;
+}
+
+#ShortDescription{
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+#ProjectsBtnParent{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.btn{
+    width: 13rem;
+    height: 3.8rem;
+    border: 1px solid #f07224;
+    background-color: #ed8805;
+    color: black;
+    padding: 0.8rem;
+    border-radius: 0.3rem;
+    font-weight: bold;
+    font-size: 1.3rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.btn:hover{
+    cursor: pointer;
+}
+
+.underline-block{
+    width: 100%;
+    height: fit-content;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.underline{
+    width: fit-content;
+    height: fit-content;
+    margin: 0 auto;
+    font-size: 0.35rem;
+    color: #ed8805;
+    background-color: #ed8805;
+    border: 1px solid #f07224;
+    border-radius: 0.2rem;
+}
+
+#AboutMe{
+    width: 100%;
+    min-height: 35vh;
+    border-top: 1px solid #ed8805;
+    border-bottom: 1px solid #ed8805;
+    box-sizing: border-box;
+}
+
+.section-title{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 3.1rem;
+    text-align: center;
+    width: 100%;
+    height: fit-content;
+    margin-inline-start: 0;
+    margin-block-end: 0;
+    margin-top: 0.67em;
+    margin-bottom: 0.1em;
+}
+
+#AboutMeBody{
+    width: 100%;
+    min-height: 30vh;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+}
+
+#GetToKnowMe{
+    width: 50%;
+    height: inherit;
+    box-sizing: border-box;
+}
+
+#GetToKnowMe > p{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.3rem;
+    font-weight: normal;
+    padding: 1rem 1.5rem 1rem 1.5rem;
+    line-height: 1.7rem;
+    margin: 0 1.5rem 0 1.5rem;
+}
+
+#GetToKnowMe > h3, #MySkills > h3{
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    font-size: 2.2rem;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+}
+
+#ContactBtnParent{
+    margin-left: 3rem;
+    margin-top: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+#MySkills{
+    width: 50%;
+    height: inherit;
+    box-sizing: border-box;
+}
+
+#SkillListSection{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.skill-list-item{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.2rem;
+    padding: 1rem;
+    color: black;
+    border: 1px solid #f07224;
+    border-radius: 0.8rem;
+    margin: 0.5rem;
+}
+
+.skill-list-item:hover{
+    background-color: #ed8805;
+    font-weight: bold;
+}
+
+#Projects{
+    width: 100%;
+    min-height: 50vh;
+    border-top: 1px solid #ed8805;
+    border-bottom: 1px solid #ed8805;
+    box-sizing: border-box;
+    background-image: url("../Images/Home-Background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+#Contact{
+    width: 100%;
+    min-height: 40vh;
+    border-top: 1px solid #ed8805;
+    border-bottom: 1px solid #ed8805;
+    box-sizing: border-box;
+    padding-bottom: 2rem;
+}
+
+#ContactBody{
+    width: 100%;
+    min-height: 35vh;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#ContactMessage{
+    width: 50%;
+    height: fit-content;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.3rem;
+    font-weight: normal;
+    margin-top: 1.3rem;
+    text-align: center;
+}
+
+#ContactFormContainer{
+    width: 50%;
+    height: fit-content;
+    box-sizing: border-box;
+    background-color: #fff;
+    border: 1px solid #d9dadb;
+    border-radius: 0.3rem;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+#ContactForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-group{
+    width: 80%;
+    height: fit-content;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+input.form-control{
+    width: 90%;
+    height: 4rem;
+    box-sizing: border-box;
+    background-color: #f2f0f0;
+    border: 1px solid #d9dadb;
+    border-radius: 0.3rem;
+    padding: 0.3rem 1rem 0.3rem 1rem;
+    font-size: 1.3rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+}
+
+.form-control:focus,.form-control:focus-visible{
+    border: 2px solid #ed8805;
+    outline: none;
+}
+
+textarea.form-control{
+    resize: none;
+    width: 90%;
+    height: 14rem;
+    box-sizing: border-box;
+    background-color: #f2f0f0;
+    border: 1px solid #d9dadb;
+    border-radius: 0.3rem;
+    padding: 0.3rem 1rem 0.3rem 1rem;
+    font-size: 1.3rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+}
+
+footer{
+    width: 100%;
+    height: 30vh;
+    background-color: black;
+    color: #fff;
+    border-top: 1px solid #ed8805;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+footer > span{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 500;
+    font-size: 1.2rem;
+    margin: 0.4rem 0 0.4rem 0;
+}
+
+footer > span:first-of-type{
+    font-weight: 600;
+}
+
+#SocialIconsSection{
+    height: fit-content;
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    margin: 0.4rem 0 0.4rem 0;
+    box-sizing: border-box;
+}
+
+.icons{
+    font-size: 1.5rem;
+    color: #fff;
+    text-decoration: none;
+}
+
+.icons:hover{
+    color: #ed8805;
+    cursor: pointer;
+}
