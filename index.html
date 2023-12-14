@@ -74,13 +74,14 @@
                 <div id="ContactFormContainer">
                     <form id="ContactForm">
                         <div class="form-group">
-                            <input type="text" name="Name" id="UserDisplayName" class="form-control" placeholder="Name" />
+                            <input type="text" name="Name" id="UserDisplayName" class="form-control" placeholder="Name" minlength="1" maxlength="50" required/>
+                            <span class="error-message"></span>
                         </div>
                         <div class="form-group">
-                            <input type="text" name="Email" id="UserEmail" class="form-control" placeholder="Email Address" />
+                            <input type="email" name="Email" id="UserEmail" class="form-control" placeholder="Email Address"  required/>
                         </div>
                         <div class="form-group">
-                            <textarea name="Message" id="UserMessage" class="form-control" placeholder="Message"></textarea>
+                            <textarea name="Message" id="UserMessage" class="form-control" placeholder="Message" required></textarea>
                         </div>
                         <div class="form-group">
                             <button type="button" class="btn" id="ContactFormSubmitBtn">Submit</button>
@@ -90,8 +91,8 @@
             </div>
         </div>
         <footer>
-            <span>Mahesh Kumaar Balaji</span>
-            <span>Application Developer | Software Engineer</span>
+            <span class="footer-span">Mahesh Kumaar <span style="color: #ed8805;">Balaji</span></span>
+            <span class="footer-span">Application Developer | Software Engineer</span>
             <div id="SocialIconsSection">
                 <a href="https://github.com/maheshkumaarbalaji" target="_blank" class="icons"><i class="fa-brands fa-github"></i></a>&nbsp;&nbsp;
                 <a href="https://www.linkedin.com/in/maheshkumaarbalaji/" target="_blank" class="icons"><i class="fa-brands fa-linkedin"></i></a>
