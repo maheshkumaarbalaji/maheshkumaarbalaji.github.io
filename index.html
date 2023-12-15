@@ -74,17 +74,19 @@
                 <div id="ContactFormContainer">
                     <form id="ContactForm">
                         <div class="form-group">
-                            <input type="text" name="Name" id="UserDisplayName" class="form-control" placeholder="Name" minlength="1" maxlength="50" required/>
-                            <span class="error-message"></span>
+                            <input type="text" name="Name" id="UserDisplayName" class="form-control" placeholder="Name" pattern="^[A-Za-z][A-Za-z\s]{0,48}[A-Za-z]$" onchange="ValidateUserDisplayName();" onfocus="EvaluateControlVisitedState('input#UserDisplayName');" onblur="EvaluateSubmitButtonState();" required/>
+                            <span id="UserDisplayNameError" class="error-message"></span>
                         </div>
                         <div class="form-group">
-                            <input type="email" name="Email" id="UserEmail" class="form-control" placeholder="Email Address"  required/>
+                            <input type="email" name="Email" id="UserEmail" class="form-control" placeholder="Email Address" onchange="ValidateUserEmail();" onfocus="EvaluateControlVisitedState('input#UserEmail');" onblur="EvaluateSubmitButtonState();" required/>
+                            <span id="UserEmailError" class="error-message"></span>
                         </div>
                         <div class="form-group">
-                            <textarea name="Message" id="UserMessage" class="form-control" placeholder="Message" required></textarea>
+                            <textarea name="Message" id="UserMessage" class="form-control" placeholder="Message" maxlength="6000" onchange="ValidateUserMessage();" onfocus="EvaluateControlVisitedState('textarea#UserMessage');" onblur="EvaluateSubmitButtonState();" required></textarea>
+                            <span id="UserMessageError" class="error-message"></span>
                         </div>
                         <div class="form-group">
-                            <button type="button" class="btn" id="ContactFormSubmitBtn">Submit</button>
+                            <button type="submit" class="btn" id="ContactFormSubmitBtn" disabled>Submit</button>
                         </div>
                     </form>
                 </div>
@@ -119,7 +121,121 @@
                 document.getElementById("btnNavToContact").addEventListener('click',event => {
                     document.getElementById("Contact").scrollIntoView(true);
                 });
+
+                document.getElementById("ContactForm").addEventListener('submit',event => {
+                    event.preventDefault();
+                    let UserDisplayName = document.getElementById("UserDisplayName").value.trim();
+                    let UserEmail = document.getElementById("UserEmail").value.trim();
+                    let UserMessage = document.getElementById("UserMessage").value.trim();
+
+                    window.location.href = "mailto:maheshkumaar.balaji@outlook.com?subject=A Message from " + UserDisplayName + "<" + UserEmail + ">" + "&body=" + UserMessage;
+
+                    document.getElementById("ContactForm").reset();
+                });
             };
+
+            function ValidateUserDisplayName(){
+                let UserDisplayNameElement = document.querySelector("input#UserDisplayName");
+                let validityState = UserDisplayNameElement.validity;
+                let ErrorMessages = [];
+
+                if(!validityState.valid)
+                {
+                    if(validityState.valueMissing)
+                    {
+                        ErrorMessages.push("'Name' is required.");
+                    }
+
+                    if(validityState.patternMismatch)
+                    {
+                        ErrorMessages.push("'Name' can be between 1 and 50 characters long, and can contain only letters and whitespaces.");
+                    }
+                    console.log(ErrorMessages);
+                    document.getElementById("UserDisplayNameError").innerHTML = ErrorMessages.join('<br />');
+                }
+                else
+                {
+                    document.getElementById("UserDisplayNameError").innerHTML = "";
+                }
+            }
+
+            function ValidateUserEmail(){
+                let UserEmailElement = document.querySelector("input#UserEmail");
+                let validityState = UserEmailElement.validity;
+                let ErrorMessages = [];
+
+                if(!validityState.valid)
+                {
+                    if(validityState.valueMissing)
+                    {
+                        ErrorMessages.push("'Email' is required.");
+                    }
+
+                    if(validityState.typeMismatch)
+                    {
+                        ErrorMessages.push("Value entered is not in standard email format.");
+                    }
+
+                    document.getElementById("UserEmailError").innerHTML = ErrorMessages.join('<br />');
+                }
+                else
+                {
+                    document.getElementById("UserEmailError").innerHTML = "";
+                }
+            }
+
+            function ValidateUserMessage(){
+                let UserMessageElement = document.querySelector("textarea#UserMessage");
+                let validityState = UserMessageElement.validity;
+                let ErrorMessages = [];
+
+                if(!validityState.valid)
+                {
+                    if(validityState.valueMissing)
+                    {
+                        ErrorMessages.push("'Message' is required.");
+                    }
+
+                    if(validityState.tooLong)
+                    {
+                        ErrorMessages.push("'Message' can contain only upto 6000 characters.");
+                    }
+
+                    document.getElementById("UserMessageError").innerHTML = ErrorMessages.join('<br />');
+                }
+                else
+                {
+                    document.getElementById("UserMessageError").innerHTML = "";
+                }
+            }
+
+            function EvaluateControlVisitedState(ElementKey){
+                let FormInputControl = document.querySelector(ElementKey);
+                if(!FormInputControl.classList.contains('touched'))
+                {
+                    FormInputControl.classList.add("touched");
+                }
+            }
+
+            function EvaluateSubmitButtonState(){
+                let ContactFormControl = document.querySelector("form#ContactForm");
+                let SubmitButtonControl = document.querySelector("button#ContactFormSubmitBtn");
+
+                if(ContactFormControl.checkValidity())
+                {
+                    if(SubmitButtonControl.disabled)
+                    {
+                        SubmitButtonControl.removeAttribute("disabled");
+                    }
+                }
+                else
+                {
+                    if(!SubmitButtonControl.disabled)
+                    {
+                        SubmitButtonControl.setAttribute("disabled",true);
+                    }
+                }
+            }
         </script>
     </body>
 </html>
