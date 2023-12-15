@@ -127,12 +127,32 @@
                     let UserDisplayName = document.getElementById("UserDisplayName").value.trim();
                     let UserEmail = document.getElementById("UserEmail").value.trim();
                     let UserMessage = document.getElementById("UserMessage").value.trim();
-
                     window.location.href = "mailto:maheshkumaar.balaji@outlook.com?subject=A Message from " + UserDisplayName + "<" + UserEmail + ">" + "&body=" + UserMessage;
-
-                    document.getElementById("ContactForm").reset();
+                    ResetForm();
                 });
             };
+
+            function ResetForm(){
+                document.getElementById("ContactForm").reset();
+                let UserDisplayNameControl = document.querySelector("input#UserDisplayName");
+                let UserEmailControl = document.querySelector("input#UserEmail");
+                let UserMessageControl = document.querySelector("textarea#UserMessage");
+
+                if(UserDisplayNameControl.classList.contains("touched"))
+                {
+                    UserDisplayNameControl.classList.remove("touched");
+                }
+
+                if(UserEmailControl.classList.contains("touched"))
+                {
+                    UserEmailControl.classList.remove("touched");
+                }
+
+                if(UserMessageControl.classList.contains("touched"))
+                {
+                    UserMessageControl.classList.remove("touched");
+                }
+            }
 
             function ValidateUserDisplayName(){
                 let UserDisplayNameElement = document.querySelector("input#UserDisplayName");
