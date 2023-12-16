@@ -57,6 +57,7 @@ header{
     font-weight: bold;
     font-size: 1.8rem;
     margin-left: 1rem;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 #NavigationMenu{
@@ -71,22 +72,26 @@ header{
 #NavigationMenu > li{
     margin-left: 1.5rem;
     font-size: 1.3rem;
-    font-weight: bold;
+    font-weight: normal;
 }
 
-#NavigationMenu a{
+.nav-link{
     text-decoration: none;
     color: black;
-    border-bottom: 3px solid #c2bebc;
+    border: 1px solid #f07224;
+    border-radius: 1.4rem;
+    padding: 0.8rem;
 }
 
-a.default, a:hover{
-    border-bottom: 3px solid #ed8805!important;
+.nav-link.default, .nav-link:hover{
+    background-color: #ed8805;
+    font-weight: bold;
 }
 
 #Home{
     width: 100%;
-    display: block;
+    display: flex;
+    flex-direction: row;
     box-sizing: border-box;
     background-image: url("../Images/Home-Background.jpg");
     background-repeat: no-repeat;
@@ -99,39 +104,72 @@ a.default, a:hover{
     border-bottom: 1px solid #ed8805;
 }
 
+#ProfilePictureSection{
+    width: 40%;
+    height: inherit;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-block-start: 6rem;
+    margin-block-end: 0;
+}
+
+#MyProfilePicture{
+    height: 400px;
+    width: 400px;
+    border-radius: 50%;
+}
+
+#ProfileDescription{
+    width: 60%;
+    height: inherit;
+    box-sizing: border-box;
+    padding-right: 1.5rem;
+}
+
 #HomeCoverGreetings{
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 4rem;
-    text-align: center;
-    margin-top: 6.2rem;
+    margin-block-start: 6rem;
+    margin-block-end: 0;
+}
+
+#HomeCoverProfession{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-block-start: 0.7rem;
+    margin-block-end: 0.7rem;
 }
 
 #ShortDescription{
-    font-size: 2rem;
-    text-align: center;
+    font-size: 1.8rem;
     margin-top: 3rem;
     margin-bottom: 3rem;
 }
 
-#ProjectsBtnParent{
+#DownloadResumeBtnParent{
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content:left;
+}
+
+#HiddenDownloadLink{
+    display: none;
 }
 
 .btn{
-    width: 13rem;
-    height: 3.8rem;
     border: 1px solid #f07224;
     background-color: #ed8805;
     color: black;
-    padding: 0.8rem;
-    border-radius: 0.3rem;
+    padding: 1rem;
+    border-radius: 1.4rem;
     font-weight: bold;
     font-size: 1.3rem;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    text-transform: uppercase;
+    font-family:'Courier New', Courier, monospace;
     text-align: center;
+    text-decoration: none;
 }
 
 .btn:hover{
