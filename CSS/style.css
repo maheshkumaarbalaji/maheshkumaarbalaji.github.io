@@ -83,29 +83,6 @@ header{
     font-weight: bold;
 }
 
-#Home{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    box-sizing: border-box;
-    background-image: url("../Images/Home-Background.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    height: 90vh;
-    margin: 0;
-    padding: 0;
-    border-top: 1px solid #ed8805;
-    border-bottom: 1px solid #ed8805;
-    flex-wrap: wrap;
-}
-
-#MyProfilePicture{
-    height: 350px;
-    width: 350px;
-    border-radius: 50%;
-}
-
 #HomeCoverGreetings{
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 4rem;
@@ -391,6 +368,37 @@ footer{
         scroll-behavior: smooth;
     }
 
+    #MenuForMobileBtn{
+        color: black;
+        border: 1px solid #f07224;
+        padding: 0.8rem;
+        border-radius: 0.6rem;
+    }
+
+    #MenuForMobileBtn:hover{
+        background-color: #c9c2c1;
+        font-weight: 600;
+        border: 1px solid #ed8805;
+        cursor: pointer;
+    }
+
+    #Home{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        box-sizing: border-box;
+        background-image: url("../Images/Home-Background.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 90vh;
+        margin: 0;
+        padding: 0;
+        border-top: 1px solid #ed8805;
+        border-bottom: 1px solid #ed8805;
+        flex-wrap: wrap;
+    }
+
     #ProfilePictureSection{
         width: 40%;
         height: inherit;
@@ -400,6 +408,12 @@ footer{
         justify-content: center;
         margin-block-start: 6rem;
         margin-block-end: 0;
+    }
+
+    #MyProfilePicture{
+        height: 350px;
+        width: 350px;
+        border-radius: 50%;
     }
 
     #ProfileDescription{
@@ -451,6 +465,35 @@ footer{
         font-size: 10px;
         scroll-behavior: smooth;
     }
+
+    #MenuForMobileBtn{
+        color: black;
+        border: 1px solid #f07224;
+        padding: 0.8rem;
+    }
+
+    #MenuForMobileBtn:hover{
+        background-color: #c9c2c1;
+        font-weight: 600;
+        border: 1px solid #ed8805;
+    }
+
+    #Home{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        box-sizing: border-box;
+        background-image: url("../Images/Home-Background.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        min-height: 90vh;
+        margin: 0;
+        padding: 0;
+        border-top: 1px solid #ed8805;
+        border-bottom: 1px solid #ed8805;
+        flex-wrap: wrap;
+    }
     
     #ProfilePictureSection{
         width: 100%;
@@ -461,6 +504,12 @@ footer{
         justify-content: center;
         margin-block-start: 6rem;
         margin-block-end: 0;
+    }
+
+    #MyProfilePicture{
+        height: 250px;
+        width: 250px;
+        border-radius: 50%;
     }
 
     #ProfileDescription{
