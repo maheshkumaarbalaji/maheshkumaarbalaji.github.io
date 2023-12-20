@@ -1,15 +1,8 @@
-/* Common style for all devices */
-
 *{
     scrollbar-color: #ed8805 #f2f0f0;
     scrollbar-width: thin;
     scroll-margin: 0;
     scroll-padding: 0;
-}
-
-html{
-    font-size: 14px;
-    scroll-behavior: smooth;
 }
 
 body{
@@ -106,28 +99,10 @@ header{
     border-bottom: 1px solid #ed8805;
 }
 
-#ProfilePictureSection{
-    width: 40%;
-    height: inherit;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-block-start: 6rem;
-    margin-block-end: 0;
-}
-
 #MyProfilePicture{
     height: 350px;
     width: 350px;
     border-radius: 50%;
-}
-
-#ProfileDescription{
-    width: 60%;
-    height: inherit;
-    box-sizing: border-box;
-    padding-right: 1.5rem;
 }
 
 #HomeCoverGreetings{
@@ -223,12 +198,7 @@ header{
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
-}
-
-#GetToKnowMe{
-    width: 50%;
-    height: inherit;
-    box-sizing: border-box;
+    flex-wrap: wrap;
 }
 
 #GetToKnowMe > p{
@@ -253,12 +223,6 @@ header{
     margin-left: 3rem;
     margin-top: 1.5rem;
     margin-bottom: 3rem;
-}
-
-#MySkills{
-    width: 50%;
-    height: inherit;
-    box-sizing: border-box;
 }
 
 #SkillListSection{
@@ -312,28 +276,6 @@ header{
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-#ContactMessage{
-    width: 50%;
-    height: fit-content;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 1.3rem;
-    font-weight: normal;
-    margin-top: 1.3rem;
-    text-align: center;
-}
-
-#ContactFormContainer{
-    width: 50%;
-    height: fit-content;
-    box-sizing: border-box;
-    background-color: #fff;
-    border: 1px solid #d9dadb;
-    border-radius: 0.3rem;
-    margin-top: 2rem;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
 }
 
 #ContactForm{
@@ -443,6 +385,11 @@ footer{
 /* Styles for large devices */
 
 @media only screen and (min-width:769px){
+    html{
+        font-size: 14px;
+        scroll-behavior: smooth;
+    }
+
     #ProfilePictureSection{
         width: 40%;
         height: inherit;
@@ -460,11 +407,50 @@ footer{
         box-sizing: border-box;
         padding-right: 1.5rem;
     }
+
+    #GetToKnowMe{
+        width: 50%;
+        height: inherit;
+        box-sizing: border-box;
+    }
+
+    #MySkills{
+        width: 50%;
+        height: inherit;
+        box-sizing: border-box;
+    }
+
+    #ContactMessage{
+        width: 50%;
+        height: fit-content;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 1.3rem;
+        font-weight: normal;
+        margin-top: 1.3rem;
+        text-align: center;
+    }
+
+    #ContactFormContainer{
+        width: 50%;
+        height: fit-content;
+        box-sizing: border-box;
+        background-color: #fff;
+        border: 1px solid #d9dadb;
+        border-radius: 0.3rem;
+        margin-top: 2rem;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
 }
 
 /* Styles for small devices */
 
 @media only screen and (max-width: 768px){
+    html{
+        font-size: 10px;
+        scroll-behavior: smooth;
+    }
+    
     #ProfilePictureSection{
         width: 100%;
         height: inherit;
@@ -481,5 +467,39 @@ footer{
         height: inherit;
         box-sizing: border-box;
         padding-right: 1.5rem;
+    }
+
+    #GetToKnowMe{
+        width: 100%;
+        height: inherit;
+        box-sizing: border-box;
+    }
+
+    #MySkills{
+        width: 100%;
+        height: inherit;
+        box-sizing: border-box;
+    }
+
+    #ContactMessage{
+        width: 100%;
+        height: fit-content;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 1.3rem;
+        font-weight: normal;
+        margin-top: 1.3rem;
+        text-align: center;
+    }
+
+    #ContactFormContainer{
+        width: 90%;
+        height: fit-content;
+        box-sizing: border-box;
+        background-color: #fff;
+        border: 1px solid #d9dadb;
+        border-radius: 0.3rem;
+        margin-top: 2rem;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
     }
 }
