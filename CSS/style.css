@@ -97,6 +97,7 @@ header{
     padding: 0;
     border-top: 1px solid #ed8805;
     border-bottom: 1px solid #ed8805;
+    flex-wrap: wrap;
 }
 
 #MyProfilePicture{
