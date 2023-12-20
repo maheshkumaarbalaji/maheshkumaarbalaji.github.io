@@ -1,3 +1,5 @@
+/* Common style for all devices */
+
 *{
     scrollbar-color: #ed8805 #f2f0f0;
     scrollbar-width: thin;
@@ -116,8 +118,8 @@ header{
 }
 
 #MyProfilePicture{
-    height: 400px;
-    width: 400px;
+    height: 350px;
+    width: 350px;
     border-radius: 50%;
 }
 
@@ -436,4 +438,48 @@ footer{
 .icons:hover{
     color: #ed8805;
     cursor: pointer;
+}
+
+/* Styles for large devices */
+
+@media only screen and (min-width:769px){
+    #ProfilePictureSection{
+        width: 40%;
+        height: inherit;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-block-start: 6rem;
+        margin-block-end: 0;
+    }
+
+    #ProfileDescription{
+        width: 60%;
+        height: inherit;
+        box-sizing: border-box;
+        padding-right: 1.5rem;
+    }
+}
+
+/* Styles for small devices */
+
+@media only screen and (max-width: 768px){
+    #ProfilePictureSection{
+        width: 100%;
+        height: inherit;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-block-start: 6rem;
+        margin-block-end: 0;
+    }
+
+    #ProfileDescription{
+        width: 100%;
+        height: inherit;
+        box-sizing: border-box;
+        padding-right: 1.5rem;
+    }
 }

@@ -131,7 +131,11 @@
                     let UserDisplayName = document.getElementById("UserDisplayName").value.trim();
                     let UserEmail = document.getElementById("UserEmail").value.trim();
                     let UserMessage = document.getElementById("UserMessage").value.trim();
-                    window.location.href = "mailto:maheshkumaar.balaji@outlook.com?subject=A Message from " + UserDisplayName + "<" + UserEmail + ">" + "&body=" + UserMessage;
+                    let EmailSubject = "A Message from " + UserDisplayName + "<" + UserEmail + ">";
+                    let EmailBody = encodeURIComponent(UserMessage);
+
+                    EmailSubject = encodeURIComponent(EmailSubject);
+                    window.location.href = "mailto:maheshkumaar.balaji@outlook.com?subject=" + EmailSubject + "&body=" + EmailBody;
                     ResetForm();
                 });
 
