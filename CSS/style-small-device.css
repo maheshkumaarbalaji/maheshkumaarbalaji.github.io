@@ -1,0 +1,159 @@
+/* Styles for small devices */
+
+@media only screen and (max-width: 600px){
+    html{
+        font-size: 10px;
+        scroll-behavior: smooth;
+    }
+
+    #PortfolioLogo{
+        height: 6vh;
+        width: 6vh;
+    }
+
+    #PortfolioTitle{
+        font-weight: bold;
+        font-size: 1.6rem;
+        margin-left: 1rem;
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+    #NavigationMenu{
+        display: none;
+    }
+
+    #NavMenuForMobile{
+        margin-left: auto;
+        margin-right: 0;
+    }
+
+    #MenuForMobileBtn{
+        color: black;
+        border: 1px solid #f07224;
+        padding: 0.8rem;
+        border-radius: 0.6rem;
+    }
+
+    #MenuForMobileBtn:hover{
+        background-color: #c9c2c1;
+        font-weight: 600;
+        border: 1px solid #ed8805;
+        cursor: pointer;
+    }
+
+    #Home{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        box-sizing: border-box;
+        background-image: url("../Images/Home-Background.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        min-height: 90vh;
+        margin: 0;
+        padding: 0;
+        border-top: 1px solid #ed8805;
+        border-bottom: 1px solid #ed8805;
+        flex-wrap: wrap;
+    }
+    
+    #ProfilePictureSection{
+        width: 100%;
+        height: inherit;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-block-start: 5rem;
+        margin-block-end: 0;
+    }
+
+    #MyProfilePicture{
+        height: 250px;
+        width: 250px;
+        border-radius: 50%;
+    }
+
+    #ProfileDescription{
+        width: 100%;
+        height: inherit;
+        box-sizing: border-box;
+        padding-right: 1rem;
+        padding-left: 1rem;
+        padding-bottom: 2rem;
+    }
+
+    #HomeCoverGreetings{
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 3.5rem;
+        margin-block-start: 6rem;
+        margin-block-end: 0;
+    }
+
+    #ShortDescription, #GetToKnowMe > p{
+        font-size: 1.55rem;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: normal;
+        line-height: 1.7rem;
+    }
+
+    #GetToKnowMe{
+        width: 100%;
+        height: inherit;
+        box-sizing: border-box;
+        padding-right: 1rem;
+        padding-left: 1rem;
+        padding-bottom: 1.5rem;
+        border-bottom: 2px solid #ed8805;
+    }
+
+    #GetToKnowMe > h3{
+        display: none;
+    }
+
+    #MySkills > h3{
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 3.1rem;
+        text-align: center;
+        width: 100%;
+        height: fit-content;
+        margin-inline-start: 0;
+        margin-block-end: 0;
+        margin-top: 0.67em;
+        margin-bottom: 0.1em;
+        text-transform: uppercase;
+    }
+
+    #MySkills{
+        width: 100%;
+        height: inherit;
+        box-sizing: border-box;
+        padding-bottom: 1.5rem;
+    }
+
+    #ContactMessage{
+        width: 90%;
+        height: fit-content;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 1.55rem;
+        font-weight: normal;
+        margin-top: 1.3rem;
+        text-align: center;
+        line-height: 1.7rem;
+    }
+
+    #ContactFormContainer{
+        width: 90%;
+        height: fit-content;
+        box-sizing: border-box;
+        background-color: #fff;
+        border: 1px solid #d9dadb;
+        border-radius: 0.3rem;
+        margin-top: 2rem;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+}

@@ -4,6 +4,9 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <link rel="stylesheet" href="CSS/style.css" />
+        <link rel="stylesheet" href="CSS/style-small-device.css" />
+        <link rel="stylesheet" href="CSS/style-medium-device.css" />
+        <link rel="stylesheet" href="CSS/style-large-device.css" />
         <link rel="icon" type="image/x-icon" href="Images/favicon.ico" />
         <script defer src="JS/solid.min.js"></script>
         <script defer src="JS/brands.min.js"></script>
@@ -19,7 +22,9 @@
                 <li><a href="#Projects" class="nav-link" id="NavProjects"><i class="fa-solid fa-laptop-code"></i> Projects</a></li>
                 <li><a href="#Contact" class="nav-link" id="NavContact"><i class="fa-solid fa-id-card"></i> Contact</a></li>
             </ul>
-            <button type="button" id="MenuForMobileBtn"><i class="fa-solid fa-bars"></i></button>
+            <div id="NavMenuForMobile">
+                <button type="button" id="MenuForMobileBtn"><i class="fa-solid fa-bars"></i></button>
+            </div>
         </header>
         <div id="Home">
             <div id="ProfilePictureSection">
@@ -27,7 +32,7 @@
             </div>
             <div id="ProfileDescription">
                 <h1 id="HomeCoverGreetings">HEY, I'M <span style="color: #ed8805;">MAHESH</span>.</h1>
-                <p id="HomeCoverProfession">Web Developer</p>
+                <p id="HomeCoverProfession">Web developer</p>
                 <p id="ShortDescription">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
                 <div id="DownloadResumeBtnParent">
                     <button id="btnDownloadResume" class="btn"><i class="fa-solid fa-file-lines"></i> Download Resume</button>
@@ -50,6 +55,9 @@
                 </div>
                 <div id="MySkills">
                     <h3>My Skills</h3>
+                    <div class="underline-block" id="MySkillsUnderlineBlock">
+                        <span class="underline">===============</span>
+                    </div>
                     <div id="SkillListSection">
                         <span class="skill-list-item">HTML5</span>
                         <span class="skill-list-item">CSS3</span>
