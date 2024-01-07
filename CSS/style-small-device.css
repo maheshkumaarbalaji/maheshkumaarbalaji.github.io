@@ -7,8 +7,8 @@
     }
 
     #PortfolioLogo{
-        height: 6vh;
-        width: 6vh;
+        height: 40px;
+        width: 40px;
     }
 
     #PortfolioTitle{
@@ -18,27 +18,73 @@
         font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     }
 
-    #NavigationMenu{
-        display: none;
-    }
-
     #NavMenuForMobile{
         margin-left: auto;
         margin-right: 0;
     }
 
     #MenuForMobileBtn{
-        color: black;
+        color: #fff;
         border: 1px solid #f07224;
         padding: 0.8rem;
         border-radius: 0.6rem;
+        background-color: black;
     }
 
     #MenuForMobileBtn:hover{
-        background-color: #c9c2c1;
-        font-weight: 600;
-        border: 1px solid #ed8805;
+        background-color: #ed8805;
+        font-weight: bold;
         cursor: pointer;
+    }
+
+    #NavigationMenu{
+        width: 50%;
+        background-color: black;
+        box-sizing: border-box;
+        border: 2px solid #f07224;
+        border-radius: 0.8rem;
+        position: absolute;
+        top: 70px;
+        right: 15px;
+        list-style-type: none;
+        margin-block-start: 0;
+        margin-block-end: 0;
+        padding-inline-start: 1rem;
+        padding-top: 1rem;
+    }
+
+    .no-display{
+        display: none;
+    }
+
+    .add-blur{
+        filter: blur(4px);
+    }
+
+    #nabla{
+        color: #ed8805;
+        position: absolute;
+        right: 20px;
+        top: 53px;
+        font-size: 1.6rem;
+    }
+
+    #NavigationMenu > li{
+        font-size: 1.2rem;
+        font-weight: normal;
+        height: 3rem;
+    }
+
+    .nav-link{
+        text-decoration: none;
+        padding: 0.5rem;
+        color: #fff;
+        text-align: center;
+    }
+
+    .nav-link:hover{
+        background-color: #ed8805;
+        font-weight: bold;
     }
 
     #Home{
@@ -51,28 +97,11 @@
         background-size: cover;
         background-position: center;
         min-height: 90vh;
-        margin: 0;
+        margin: 80px 0 0 0;
         padding: 0;
         border-top: 1px solid #ed8805;
         border-bottom: 1px solid #ed8805;
         flex-wrap: wrap;
-    }
-    
-    #ProfilePictureSection{
-        width: 100%;
-        height: inherit;
-        box-sizing: border-box;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        margin-block-start: 5rem;
-        margin-block-end: 0;
-    }
-
-    #MyProfilePicture{
-        height: 250px;
-        width: 250px;
-        border-radius: 50%;
     }
 
     #ProfileDescription{

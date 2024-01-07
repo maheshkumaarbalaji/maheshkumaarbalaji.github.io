@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="CSS/style-medium-device.css" />
         <link rel="stylesheet" href="CSS/style-large-device.css" />
         <link rel="icon" type="image/x-icon" href="Images/favicon.ico" />
+        <script src="JS/index.js"></script>
         <script defer src="JS/solid.min.js"></script>
         <script defer src="JS/brands.min.js"></script>
         <script defer src="JS/fontawesome.js"></script>
@@ -16,20 +17,18 @@
         <header>
             <img src="Images/logo.jpeg" id="PortfolioLogo" alt="Portfolio Logo"/>
             <span id="PortfolioTitle">Mahesh Kumaar <span style="color: #ed8805;">Balaji</span></span>
-            <ul id="NavigationMenu">
-                <li><a href="#Home" class="nav-link default" id="NavHome"><i class="fa-solid fa-house"></i> Home</a></li>
+            <div id="NavMenuForMobile">
+                <button type="button" id="MenuForMobileBtn"><i class="fa-solid fa-bars"></i></button>
+            </div>
+            <span id="nabla" class="no-display">&#9660;</span>
+            <ul id="NavigationMenu" class="no-display">
+                <li><a href="#Home" class="nav-link" id="NavHome"><i class="fa-solid fa-house"></i> Home</a></li>
                 <li><a href="#AboutMe" class="nav-link" id="NavAboutMe"><i class="fa-solid fa-user"></i> About Me</a></li>
                 <li><a href="#Projects" class="nav-link" id="NavProjects"><i class="fa-solid fa-laptop-code"></i> Projects</a></li>
                 <li><a href="#Contact" class="nav-link" id="NavContact"><i class="fa-solid fa-id-card"></i> Contact</a></li>
             </ul>
-            <div id="NavMenuForMobile">
-                <button type="button" id="MenuForMobileBtn"><i class="fa-solid fa-bars"></i></button>
-            </div>
         </header>
-        <div id="Home">
-            <div id="ProfilePictureSection">
-                <img src="Images/My-Picture.jpg" id="MyProfilePicture" alt="My Profile Picture" />
-            </div>
+        <div id="Home" class="section">
             <div id="ProfileDescription">
                 <h1 id="HomeCoverGreetings">HEY, I'M <span style="color: #ed8805;">MAHESH</span>.</h1>
                 <p id="HomeCoverProfession">Web developer</p>
@@ -40,7 +39,7 @@
                 </div>
             </div>
         </div>
-        <div id="AboutMe">
+        <div id="AboutMe" class="section">
             <h1 class="section-title">ABOUT ME</h1>
             <div class="underline-block">
                 <span class="underline">===============</span>
@@ -71,17 +70,18 @@
                         <span class="skill-list-item">SQL Server</span>
                         <span class="skill-list-item">SharePoint</span>
                         <span class="skill-list-item">Algorithms</span>
+                        <span class="skill-list-item">Python</span>
                     </div>
                 </div>
             </div>
         </div>
-        <div id="Projects">
+        <div id="Projects" class="section">
             <h1 class="section-title">PROJECTS</h3>
             <div class="underline-block">
                 <span class="underline">===============</span>
             </div>
         </div>
-        <div id="Contact">
+        <div id="Contact" class="section">
             <h1 class="section-title">CONTACT</h3>
             <div class="underline-block">
                 <span class="underline">===============</span>
@@ -109,7 +109,7 @@
                 </div>
             </div>
         </div>
-        <footer>
+        <footer id="PageFooter">
             <span class="footer-span">Mahesh Kumaar <span style="color: #ed8805;">Balaji</span></span>
             <span class="footer-span">Web Developer</span>
             <div id="SocialIconsSection">
@@ -117,166 +117,5 @@
                 <a href="https://www.linkedin.com/in/maheshkumaarbalaji/" target="_blank" class="icons"><i class="fa-brands fa-linkedin"></i></a>
             </div>
         </footer>
-        <script type="text/javascript">
-            window.onload = function(){
-                document.getElementById("NavigationMenu").addEventListener('click',event => {
-                    let elements = document.getElementsByClassName("nav-link");
-                    for(let index = 0; index < elements.length; index++)
-                    {
-                        if(elements[index].classList.contains("default"))
-                        {
-                            elements[index].classList.toggle("default");
-                        }
-                    }
-                    document.getElementById(event.target.id).classList.toggle("default");
-                });
-
-                document.getElementById("btnNavToContact").addEventListener('click',event => {
-                    document.getElementById("Contact").scrollIntoView(true);
-                });
-
-                document.getElementById("ContactForm").addEventListener('submit',event => {
-                    event.preventDefault();
-                    let UserDisplayName = document.getElementById("UserDisplayName").value.trim();
-                    let UserEmail = document.getElementById("UserEmail").value.trim();
-                    let UserMessage = document.getElementById("UserMessage").value.trim();
-                    let EmailSubject = "A Message from " + UserDisplayName + "<" + UserEmail + ">";
-                    let EmailBody = encodeURIComponent(UserMessage);
-
-                    EmailSubject = encodeURIComponent(EmailSubject);
-                    window.location.href = "mailto:maheshkumaar.balaji@outlook.com?subject=" + EmailSubject + "&body=" + EmailBody;
-                    ResetForm();
-                });
-
-                document.getElementById("btnDownloadResume").addEventListener('click',event => {
-                    document.getElementById("HiddenDownloadLink").click();
-                });
-            };
-
-            function ResetForm(){
-                document.getElementById("ContactForm").reset();
-                let UserDisplayNameControl = document.querySelector("input#UserDisplayName");
-                let UserEmailControl = document.querySelector("input#UserEmail");
-                let UserMessageControl = document.querySelector("textarea#UserMessage");
-
-                if(UserDisplayNameControl.classList.contains("touched"))
-                {
-                    UserDisplayNameControl.classList.remove("touched");
-                }
-
-                if(UserEmailControl.classList.contains("touched"))
-                {
-                    UserEmailControl.classList.remove("touched");
-                }
-
-                if(UserMessageControl.classList.contains("touched"))
-                {
-                    UserMessageControl.classList.remove("touched");
-                }
-            }
-
-            function ValidateUserDisplayName(){
-                let UserDisplayNameElement = document.querySelector("input#UserDisplayName");
-                let validityState = UserDisplayNameElement.validity;
-                let ErrorMessages = [];
-
-                if(!validityState.valid)
-                {
-                    if(validityState.valueMissing)
-                    {
-                        ErrorMessages.push("'Name' is required.");
-                    }
-
-                    if(validityState.patternMismatch)
-                    {
-                        ErrorMessages.push("'Name' can be between 1 and 50 characters long, and can contain only letters and whitespaces.");
-                    }
-                    console.log(ErrorMessages);
-                    document.getElementById("UserDisplayNameError").innerHTML = ErrorMessages.join('<br />');
-                }
-                else
-                {
-                    document.getElementById("UserDisplayNameError").innerHTML = "";
-                }
-            }
-
-            function ValidateUserEmail(){
-                let UserEmailElement = document.querySelector("input#UserEmail");
-                let validityState = UserEmailElement.validity;
-                let ErrorMessages = [];
-
-                if(!validityState.valid)
-                {
-                    if(validityState.valueMissing)
-                    {
-                        ErrorMessages.push("'Email' is required.");
-                    }
-
-                    if(validityState.typeMismatch)
-                    {
-                        ErrorMessages.push("Value entered is not in standard email format.");
-                    }
-
-                    document.getElementById("UserEmailError").innerHTML = ErrorMessages.join('<br />');
-                }
-                else
-                {
-                    document.getElementById("UserEmailError").innerHTML = "";
-                }
-            }
-
-            function ValidateUserMessage(){
-                let UserMessageElement = document.querySelector("textarea#UserMessage");
-                let validityState = UserMessageElement.validity;
-                let ErrorMessages = [];
-
-                if(!validityState.valid)
-                {
-                    if(validityState.valueMissing)
-                    {
-                        ErrorMessages.push("'Message' is required.");
-                    }
-
-                    if(validityState.tooLong)
-                    {
-                        ErrorMessages.push("'Message' can contain only upto 6000 characters.");
-                    }
-
-                    document.getElementById("UserMessageError").innerHTML = ErrorMessages.join('<br />');
-                }
-                else
-                {
-                    document.getElementById("UserMessageError").innerHTML = "";
-                }
-            }
-
-            function EvaluateControlVisitedState(ElementKey){
-                let FormInputControl = document.querySelector(ElementKey);
-                if(!FormInputControl.classList.contains('touched'))
-                {
-                    FormInputControl.classList.add("touched");
-                }
-            }
-
-            function EvaluateSubmitButtonState(){
-                let ContactFormControl = document.querySelector("form#ContactForm");
-                let SubmitButtonControl = document.querySelector("button#ContactFormSubmitBtn");
-
-                if(ContactFormControl.checkValidity())
-                {
-                    if(SubmitButtonControl.disabled)
-                    {
-                        SubmitButtonControl.removeAttribute("disabled");
-                    }
-                }
-                else
-                {
-                    if(!SubmitButtonControl.disabled)
-                    {
-                        SubmitButtonControl.setAttribute("disabled",true);
-                    }
-                }
-            }
-        </script>
     </body>
 </html>

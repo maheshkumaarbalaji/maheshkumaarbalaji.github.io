@@ -33,14 +33,20 @@ body{
 }
 
 header{
-    height: 10vh;
+    height: 80px;
     width: 100%;
     padding: 1vh;
     display: flex;
     box-sizing: border-box;
-    border-bottom: 1px solid #ed8805;
+    border: 2px solid #ed8805;
     align-items: center;
     justify-content: flex-start;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background-color: black;
+    color: #fff;
 }
 
 #HomeCoverProfession{
