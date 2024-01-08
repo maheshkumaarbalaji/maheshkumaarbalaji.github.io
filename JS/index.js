@@ -131,58 +131,39 @@ function EvaluateSubmitButtonState()
 
 function EvaluateNavLinkActiveState()
 {
-    let sections = document.querySelectorAll(".section");
-    let windowHeight = window.innerHeight || document.documentElement.clientHeight;
-    let MaximumSpace = -99999;
-    let MaximumSpaceElementId = "";
+    let CurrentScrollPosition = window.scrollY;
+    let HomeHeight = document.getElementById("Home").offsetHeight;
+    let AboutMeHeight = document.getElementById("AboutMe").offsetHeight;
+    let SkillsHeight = document.getElementById("MySkills").offsetHeight;
+    let ProjectsHeight = document.getElementById("Projects").offsetHeight;
+    let ElementId = "";
 
-    for(let section of sections)
+    if(CurrentScrollPosition >= 0 && CurrentScrollPosition < HomeHeight)
     {
-        let ElementId = section.getAttribute('id');
-        let ElementRect = document.getElementById(ElementId).getBoundingClientRect();
-        let SpaceInViewPortOccupiedByElement = 0;
-
-        if(ElementRect.top >= 80)
-        {
-            if(ElementRect.bottom <= windowHeight)
-            {
-                //This implies that entire section is present within the confines of the window viewport.
-                SpaceInViewPortOccupiedByElement = ElementRect.height;
-            }
-            else
-            {
-                SpaceInViewPortOccupiedByElement = windowHeight - ElementRect.top;
-            }
-        }
-        else
-        {
-            if(ElementRect.bottom < 80)
-            {
-                SpaceInViewPortOccupiedByElement = -999;
-            }
-            else if(ElementRect.bottom >= 80 && ElementRect.bottom <= windowHeight)
-            {
-                SpaceInViewPortOccupiedByElement = ElementRect.height - 80;
-            }
-            else
-            {
-                SpaceInViewPortOccupiedByElement = windowHeight - 80;
-            }
-        }
-
-        if(SpaceInViewPortOccupiedByElement > MaximumSpace)
-        {
-            MaximumSpace = SpaceInViewPortOccupiedByElement;
-            MaximumSpaceElementId = ElementId;
-        }
+        ElementId = "NavHome";
+    }
+    else if(CurrentScrollPosition < (HomeHeight + AboutMeHeight))
+    {
+        ElementId = "NavAboutMe";
+    }
+    else if(CurrentScrollPosition < (HomeHeight + AboutMeHeight + SkillsHeight))
+    {
+        ElementId = "NavMySkills";
+    }
+    else if(CurrentScrollPosition < (HomeHeight + AboutMeHeight + SkillsHeight + ProjectsHeight))
+    {
+        ElementId = "NavProjects";
+    }
+    else
+    {
+        ElementId = "NavContact";
     }
 
-    MaximumSpaceElementId = "Nav" + MaximumSpaceElementId;
     let NavigationLinks = document.getElementsByClassName("nav-link");
 
     for(let link of NavigationLinks)
     {
-        if(link.getAttribute('id') === MaximumSpaceElementId)
+        if(link.getAttribute('id') === ElementId)
         {
             if(!link.classList.contains("active"))
             {
@@ -199,12 +180,74 @@ function EvaluateNavLinkActiveState()
     }
 }
 
+function ScrollTo(ElementId)
+{
+    let HomeHeight = document.getElementById("Home").offsetHeight;
+    let AboutMeHeight = document.getElementById("AboutMe").offsetHeight;
+    let SkillsHeight = document.getElementById("MySkills").offsetHeight;
+    let ProjectsHeight = document.getElementById("Projects").offsetHeight;
+    let ScrollHeight = 0;
+
+    if(ElementId === "Home")
+    {
+        ScrollHeight = 0;
+    }
+    else if(ElementId === "AboutMe")
+    {
+        ScrollHeight = HomeHeight;
+    }
+    else if(ElementId === "MySkills")
+    {
+        ScrollHeight = HomeHeight + AboutMeHeight;
+    }
+    else if(ElementId === "Projects")
+    {
+        ScrollHeight = HomeHeight + AboutMeHeight + SkillsHeight;
+    }
+    else if(ElementId === "Contact")
+    {
+        ScrollHeight = HomeHeight + AboutMeHeight + SkillsHeight + ProjectsHeight;
+    }
+
+    window.scrollTo(0, ScrollHeight);
+}
+
+function ManageMobileNavigationMenu(ToShow)
+{
+    let sections = document.querySelectorAll(".section");
+    
+    if(ToShow)
+    {
+        for(let section of sections)
+        {
+            let SectionId = section.getAttribute("id");
+            document.getElementById(SectionId).classList.add("add-blur");
+        }
+
+        document.getElementById("PageFooter").classList.add("add-blur");
+        document.getElementById("nabla").classList.remove("no-display");
+        document.getElementById("NavigationMenu").classList.remove("no-display");
+    }
+    else
+    {
+        for(let section of sections)
+        {
+            let SectionId = section.getAttribute("id");
+            document.getElementById(SectionId).classList.remove("add-blur");
+        }
+
+        document.getElementById("PageFooter").classList.remove("add-blur");
+        document.getElementById("nabla").classList.add("no-display");
+        document.getElementById("NavigationMenu").classList.add("no-display");
+    }
+}
+
 window.onload = function(){
     
     EvaluateNavLinkActiveState();
 
     document.getElementById("btnNavToContact").addEventListener('click', event => {
-        document.getElementById("Contact").scrollIntoView(true);
+        ScrollTo("Contact");
     });
 
     document.getElementById("ContactForm").addEventListener('submit',event => {
@@ -230,31 +273,28 @@ window.onload = function(){
 
     document.getElementById("MenuForMobileBtn").addEventListener('click', event => {
         let OnOrOffMenu = document.getElementById("NavigationMenu").classList.contains("no-display");
-        let sections = document.querySelectorAll(".section");
-
+        
         if(OnOrOffMenu)
         {
-            for(let section of sections)
-            {
-                let SectionId = section.getAttribute("id");
-                document.getElementById(SectionId).classList.add("add-blur");
-            }
-
-            document.getElementById("PageFooter").classList.add("add-blur");
-            document.getElementById("nabla").classList.remove("no-display");
-            document.getElementById("NavigationMenu").classList.remove("no-display");
+            ManageMobileNavigationMenu(true);
         }
         else
         {
-            for(let section of sections)
-            {
-                let SectionId = section.getAttribute("id");
-                document.getElementById(SectionId).classList.remove("add-blur");
-            }
-
-            document.getElementById("PageFooter").classList.remove("add-blur");
-            document.getElementById("nabla").classList.add("no-display");
-            document.getElementById("NavigationMenu").classList.add("no-display");
+            ManageMobileNavigationMenu(false);
         }
+    });
+
+    document.getElementById("NavigationMenu").addEventListener('click', event => {
+        event.stopPropagation();
+        let htmlElement = document.getElementsByTagName("html")[0];
+        let DeviceSize = getComputedStyle(htmlElement).getPropertyValue("--device-size");
+
+        if(DeviceSize === "medium" || DeviceSize === "small")
+        {
+            ManageMobileNavigationMenu(false);
+        }
+
+        let TargetElementId = event.target.id.replace("Nav", "");
+        ScrollTo(TargetElementId);
     });
 };

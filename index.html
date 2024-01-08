@@ -22,17 +22,18 @@
             </div>
             <span id="nabla" class="no-display">&#9660;</span>
             <ul id="NavigationMenu" class="no-display">
-                <li><a href="#Home" class="nav-link" id="NavHome"><i class="fa-solid fa-house"></i> Home</a></li>
-                <li><a href="#AboutMe" class="nav-link" id="NavAboutMe"><i class="fa-solid fa-user"></i> About Me</a></li>
-                <li><a href="#Projects" class="nav-link" id="NavProjects"><i class="fa-solid fa-laptop-code"></i> Projects</a></li>
-                <li><a href="#Contact" class="nav-link" id="NavContact"><i class="fa-solid fa-id-card"></i> Contact</a></li>
+                <li><span class="nav-link" id="NavHome"><i class="fa-solid fa-house"></i> Home</span></li>
+                <li><span class="nav-link" id="NavAboutMe"><i class="fa-solid fa-user"></i> Narrative</span></li>
+                <li><span class="nav-link" id="NavMySkills"><i class="fa-solid fa-list"></i> Skills</span></li>
+                <li><span class="nav-link" id="NavProjects"><i class="fa-solid fa-laptop-code"></i> Projects</span></li>
+                <li><span class="nav-link" id="NavContact"><i class="fa-solid fa-id-card"></i> Contact</span></li>
             </ul>
         </header>
         <div id="Home" class="section">
             <div id="ProfileDescription">
                 <h1 id="HomeCoverGreetings">HEY, I'M <span style="color: #ed8805;">MAHESH</span>.</h1>
-                <p id="HomeCoverProfession">Web developer</p>
-                <p id="ShortDescription">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                <p id="HomeCoverProfession">Software Engineer</p>
+                <p id="ShortDescription">A driven and curious software engineer aiming to provide tailored and innovative solutions to diverse clients.</p>
                 <div id="DownloadResumeBtnParent">
                     <button id="btnDownloadResume" class="btn"><i class="fa-solid fa-file-lines"></i> Download Resume</button>
                     <a href="Files/My-Resume.pdf" download="MaheshKumaarBalaji_Resume" id="HiddenDownloadLink">Hidden Download</a>
@@ -40,38 +41,49 @@
             </div>
         </div>
         <div id="AboutMe" class="section">
-            <h1 class="section-title">ABOUT ME</h1>
+            <h1 class="section-title">MY NARRATIVE</h1>
             <div class="underline-block">
                 <span class="underline">===============</span>
             </div>
             <div id="AboutMeBody">
                 <div id="GetToKnowMe">
-                    <h3>Get to know me !</h3>
-                    <p>I am a persistent, detail-oriented software engineer with 5 years of industry experience in orchestrating key business processes; and in the maintenance of business process workflows through corrective software maintenance. <br /><br />Career highlights include employing FMEA methodology for risk assessment on 100+ ETL workloads, thereby reducing the risk associated by 47%; and facilitating the automation of customer invoice processing in 16 countries across Europe and America. Some of my personal projects have been shown in the <b>Projects</b> section of this page.</p>
+                    <p>
+                        My fascination with the intricacies of the digital world began back in 8th grade when my father gifted me my first personal computer. My love for exploring novels online inadvertently led me to question the magic behind websites' graphical interfaces. This curiosity led me to embark on the exciting journey of building my first website, providing me with a glimpse into the captivating world of programming.<br /><br />
+
+                        Determined to deepen my understanding, I pursued a computer science major in high school, immersing myself in fundamental programming concepts and practical implementations using C++. To stay at the forefront of technological advancements, I engaged in numerous online courses and certifications, exploring modern frameworks such as Angular and React. The remarkable user experiences of platforms like Netflix, Slack, Freshworks, and PickYourTrail inspired me to delve deeper into the principles and tools shaping modern web development. I embarked on personal projects, reimagining and implementing these websites with frameworks of my choice. <br /><br />
+                            
+                        Eager to bridge theory and industry experience, I joined Larsen and Toubro Infotech (LTI) in 2018, as a Graduate Engineer Trainee. Here, I contributed to developing digital solutions using ASP.NET, C#, and SharePoint On-Premises, leading efforts in migrating critical SSIS packages and gaining valuable exposure to leadership roles. My work here, revealed my passion for developing utility applications that simplify tasks and enhance lives. I discovered the profound impact software engineering can have beyond websites, extending to workflows, jobs, and automations. Whether creating small-scale applications for efficient family expense management or spearheading enterprise-grade solutions, my goal remains to craft meaningful and impactful software.<br /><br />
+                            
+                        Ultimately, my vision is to transition into freelancing, where I can leverage my skills to provide tailored and innovative solutions for diverse clients. The journey continues, and I am excited about the limitless possibilities that lie ahead in the dynamic realm of software engineering.<br />
+                    </p>
                     <div id="ContactBtnParent">
                         <button id="btnNavToContact" class="btn"><i class="fa-solid fa-id-card"></i> Contact</button>
                     </div>
                 </div>
-                <div id="MySkills">
-                    <h3>My Skills</h3>
-                    <div class="underline-block" id="MySkillsUnderlineBlock">
-                        <span class="underline">===============</span>
-                    </div>
-                    <div id="SkillListSection">
-                        <span class="skill-list-item">HTML5</span>
-                        <span class="skill-list-item">CSS3</span>
-                        <span class="skill-list-item">Javascript</span>
-                        <span class="skill-list-item">Bootstrap</span>
-                        <span class="skill-list-item">Angular</span>
-                        <span class="skill-list-item">Node.js</span>
-                        <span class="skill-list-item">C#</span>
-                        <span class="skill-list-item">.NET Development</span>
-                        <span class="skill-list-item">Microsoft Azure</span>
-                        <span class="skill-list-item">SQL Server</span>
-                        <span class="skill-list-item">SharePoint</span>
-                        <span class="skill-list-item">Algorithms</span>
-                        <span class="skill-list-item">Python</span>
-                    </div>
+            </div>
+        </div>
+        <div id="MySkills" class="section">
+            <h1 class="section-title">TECHNICAL SKILLS</h1>
+            <div class="underline-block">
+                <span class="underline">===============</span>
+            </div>
+            <div id="MySkillsBody">
+                <div id="SkillListSection">
+                    <span class="skill-list-item">HTML5</span>
+                    <span class="skill-list-item">CSS3</span>
+                    <span class="skill-list-item">Javascript</span>
+                    <span class="skill-list-item">Bootstrap</span>
+                    <span class="skill-list-item">Angular</span>
+                    <span class="skill-list-item">Node.js</span>
+                    <span class="skill-list-item">C#</span>
+                    <span class="skill-list-item">.NET Framework</span>
+                    <span class="skill-list-item">Azure Cloud</span>
+                    <span class="skill-list-item">SQL Server</span>
+                    <span class="skill-list-item">SharePoint</span>
+                    <span class="skill-list-item">Algorithms</span>
+                    <span class="skill-list-item">Python</span>
+                    <span class="skill-list-item">Powerapps</span>
+                    <span class="skill-list-item">Power Automate</span>
                 </div>
             </div>
         </div>
@@ -110,8 +122,8 @@
             </div>
         </div>
         <footer id="PageFooter">
-            <span class="footer-span">Mahesh Kumaar <span style="color: #ed8805;">Balaji</span></span>
-            <span class="footer-span">Web Developer</span>
+            <span class="footer-title">Mahesh Kumaar <span style="color: #ed8805;">Balaji</span></span>
+            <span class="footer-span">Software Engineer</span>
             <div id="SocialIconsSection">
                 <a href="https://github.com/maheshkumaarbalaji" target="_blank" class="icons"><i class="fa-brands fa-github"></i></a>&nbsp;&nbsp;
                 <a href="https://www.linkedin.com/in/maheshkumaarbalaji/" target="_blank" class="icons"><i class="fa-brands fa-linkedin"></i></a>

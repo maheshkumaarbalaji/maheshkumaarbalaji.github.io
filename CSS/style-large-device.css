@@ -4,6 +4,7 @@
     html{
         font-size: 14px;
         scroll-behavior: smooth;
+        --device-size: large;
     }
 
     #PortfolioLogo{
@@ -33,7 +34,7 @@
     
     #NavigationMenu > li{
         margin-left: 1.5rem;
-        font-size: 1.3rem;
+        font-size: 1.2rem;
         font-weight: normal;
     }
     
@@ -85,29 +86,32 @@
     }
 
     #ShortDescription{
+        width: 60%;
         font-size: 1.55rem;
         margin-top: 3rem;
         margin-bottom: 3rem;
         padding-left: 3rem;
         padding-right: 3rem;
+        text-align: center;
     }
 
     #GetToKnowMe{
-        width: 50%;
+        width: 90%;
         height: inherit;
         box-sizing: border-box;
         border-bottom: none;
         padding-bottom: none;
     }
 
-    #GetToKnowMe > h3, #MySkills > h3{
-        text-align: center;
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        font-weight: bold;
-        font-size: 2.2rem;
-        margin-block-start: 1em;
-        margin-block-end: 1em;
-        display: block;
+    #SkillListSection{
+        width: 65%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        margin-top: 0.67em;
+        margin-bottom: 0.1em;
     }
 
     #GetToKnowMe > p{
@@ -123,17 +127,6 @@
         margin-left: 3rem;
         margin-top: 1.5rem;
         margin-bottom: 1.5rem;
-    }
-
-    #MySkills{
-        width: 50%;
-        height: inherit;
-        box-sizing: border-box;
-        padding-bottom: none;
-    }
-
-    #MySkillsUnderlineBlock{
-        display: none;
     }
 
     #ContactMessage{
