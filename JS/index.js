@@ -129,57 +129,6 @@ function EvaluateSubmitButtonState()
     }
 }
 
-function EvaluateNavLinkActiveState()
-{
-    let CurrentScrollPosition = window.scrollY;
-    let HomeHeight = document.getElementById("Home").offsetHeight;
-    let AboutMeHeight = document.getElementById("AboutMe").offsetHeight;
-    let SkillsHeight = document.getElementById("MySkills").offsetHeight;
-    let ProjectsHeight = document.getElementById("Projects").offsetHeight;
-    let ElementId = "";
-
-    if(CurrentScrollPosition >= 0 && CurrentScrollPosition < HomeHeight)
-    {
-        ElementId = "NavHome";
-    }
-    else if(CurrentScrollPosition < (HomeHeight + AboutMeHeight))
-    {
-        ElementId = "NavAboutMe";
-    }
-    else if(CurrentScrollPosition < (HomeHeight + AboutMeHeight + SkillsHeight))
-    {
-        ElementId = "NavMySkills";
-    }
-    else if(CurrentScrollPosition < (HomeHeight + AboutMeHeight + SkillsHeight + ProjectsHeight))
-    {
-        ElementId = "NavProjects";
-    }
-    else
-    {
-        ElementId = "NavContact";
-    }
-
-    let NavigationLinks = document.getElementsByClassName("nav-link");
-
-    for(let link of NavigationLinks)
-    {
-        if(link.getAttribute('id') === ElementId)
-        {
-            if(!link.classList.contains("active"))
-            {
-                link.classList.add("active");
-            }
-        }
-        else
-        {
-            if(link.classList.contains("active"))
-            {
-                link.classList.remove("active");
-            }
-        }
-    }
-}
-
 function ScrollTo(ElementId)
 {
     let HomeHeight = document.getElementById("Home").offsetHeight;
@@ -243,8 +192,6 @@ function ManageMobileNavigationMenu(ToShow)
 }
 
 window.onload = function(){
-    
-    EvaluateNavLinkActiveState();
 
     document.getElementById("btnNavToContact").addEventListener('click', event => {
         ScrollTo("Contact");
@@ -265,10 +212,6 @@ window.onload = function(){
 
     document.getElementById("btnDownloadResume").addEventListener('click',event => {
         document.getElementById("HiddenDownloadLink").click();
-    });
-
-    document.addEventListener("scrollend", event => {
-        EvaluateNavLinkActiveState();
     });
 
     document.getElementById("MenuForMobileBtn").addEventListener('click', event => {

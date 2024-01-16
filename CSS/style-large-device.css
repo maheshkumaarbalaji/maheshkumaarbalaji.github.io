@@ -46,7 +46,7 @@
         padding: 0.8rem;
     }
     
-    .nav-link.active, .nav-link:hover{
+    .nav-link:hover{
         background-color: #ed8805;
         font-weight: bold;
     }
