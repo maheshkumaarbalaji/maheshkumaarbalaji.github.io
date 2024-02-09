@@ -2,7 +2,7 @@
 
 *Created using HTML5, CSS3 and Javascript.*
 
-**Website** - [My Portfolio](https://maheshkumaarbalaji.github.io)
+**Website** - [Mahesh Kumaar Balaji](https://maheshkumaarbalaji.github.io)
 
 ## Table of Contents
 
