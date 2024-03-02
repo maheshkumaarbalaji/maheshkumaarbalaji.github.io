@@ -191,6 +191,19 @@ function ManageMobileNavigationMenu(ToShow)
     }
 }
 
+function setClickHandlersForProjectNav(){
+    let ProjectButtons = document.querySelectorAll("button.btn-project");
+    for(let index = 0; index < ProjectButtons.length; index++)
+    {
+        let Element = ProjectButtons[index];
+        let Id = Element.id;
+        let NavLink = Element.attributes["data-target"].value;
+        document.getElementById(Id).addEventListener('click', function(){
+            window.open(NavLink, '_blank')
+        });
+    }
+}
+
 window.onload = function(){
 
     document.getElementById("btnNavToContact").addEventListener('click', event => {
@@ -240,4 +253,6 @@ window.onload = function(){
         let TargetElementId = event.target.id.replace("Nav", "");
         ScrollTo(TargetElementId);
     });
+
+    setClickHandlersForProjectNav();
 };

@@ -29,6 +29,7 @@
                 <li><span class="nav-link" id="NavContact"><i class="fa-solid fa-id-card"></i> Contact</span></li>
             </ul>
         </header>
+        <!--'Home' Section Start-->
         <div id="Home" class="section">
             <div id="ProfileDescription">
                 <h1 id="HomeCoverGreetings">HEY, I'M <span style="color: #ed8805;">MAHESH</span>.</h1>
@@ -40,6 +41,8 @@
                 </div>
             </div>
         </div>
+        <!--'Home' Section End-->
+        <!--'About Me' Section Start-->
         <div id="AboutMe" class="section">
             <h1 class="section-title">MY NARRATIVE</h1>
             <div class="underline-block">
@@ -62,37 +65,70 @@
                 </div>
             </div>
         </div>
+        <!--'About Me' Section End-->
+        <!--'My Skills' Section Start-->
         <div id="MySkills" class="section">
             <h1 class="section-title">TECHNICAL SKILLS</h1>
             <div class="underline-block">
                 <span class="underline">===============</span>
             </div>
             <div id="MySkillsBody">
-                <div id="SkillListSection">
-                    <span class="skill-list-item">HTML5</span>
-                    <span class="skill-list-item">CSS3</span>
-                    <span class="skill-list-item">Javascript</span>
-                    <span class="skill-list-item">Bootstrap</span>
-                    <span class="skill-list-item">Angular</span>
-                    <span class="skill-list-item">Node.js</span>
-                    <span class="skill-list-item">C#</span>
-                    <span class="skill-list-item">.NET Framework</span>
-                    <span class="skill-list-item">Azure Cloud</span>
-                    <span class="skill-list-item">SQL Server</span>
-                    <span class="skill-list-item">SharePoint</span>
-                    <span class="skill-list-item">Algorithms</span>
-                    <span class="skill-list-item">Python</span>
-                    <span class="skill-list-item">Powerapps</span>
-                    <span class="skill-list-item">Power Automate</span>
+                <div class="skills-category">
+                    <p class="category-heading">Web Development</p>
+                    <div class="skill-list">
+                        <span class="skill-list-item">HTML5</span>
+                        <span class="skill-list-item">CSS3</span>
+                        <span class="skill-list-item">Bootstrap</span>
+                        <span class="skill-list-item">Angular</span>
+                    </div>
+                </div>
+                <div class="skills-category">
+                    <p class="category-heading">Database(s)</p>
+                    <div class="skill-list">
+                        <span class="skill-list-item">MS SQL Server</span>
+                        <span class="skill-list-item">Postgres</span>
+                        <span class="skill-list-item">Mongo DB</span>
+                    </div>
+                </div>
+                <div class="skills-category">
+                    <p class="category-heading">Programming Languages</p>
+                    <div class="skill-list">
+                        <span class="skill-list-item">C#</span>
+                        <span class="skill-list-item">Python</span>
+                        <span class="skill-list-item">Node.js</span>
+                    </div>
+                </div>
+                <div class="skills-category">
+                    <p class="category-heading">Lowcode Development</p>
+                    <div class="skill-list">
+                        <span class="skill-list-item">Power Automate</span>
+                        <span class="skill-list-item">Powerapps</span>
+                    </div>
                 </div>
             </div>
         </div>
+        <!--'My Skills' Section End-->
+        <!--'Projects' Section Start-->
         <div id="Projects" class="section">
             <h1 class="section-title">PROJECTS</h3>
             <div class="underline-block">
                 <span class="underline">===============</span>
             </div>
+            <div id="ProjectsBody">
+                <div class="project-item">
+                    <div class="project-image-section">
+                        <img src="./Images/PyPi-Image.webp" alt="Python-Project-1" class="project-image" />
+                    </div>
+                    <div class="project-description">
+                        <h2>EML Mail Reader</h2>
+                        <p>A Python library designed to analyze EML files and to extract details and attachments contained within. It captures various information from the email, such as attachments, sender address, recipient address, subject, body, and a comprehensive list of all headers in the EML file.</p>
+                        <button type="button" class="btn btn-project" id="ProjectOne" data-target="https://pypi.org/project/emlmailreader/"><i class="fa-solid fa-book"></i>&nbsp;Project Page</button>
+                    </div>
+                </div>
+            </div>
         </div>
+        <!--'Projects' Section End-->
+        <!--'Contact' Section Start-->
         <div id="Contact" class="section">
             <h1 class="section-title">CONTACT</h3>
             <div class="underline-block">
@@ -115,12 +151,13 @@
                             <span id="UserMessageError" class="error-message"></span>
                         </div>
                         <div class="form-group">
-                            <button type="submit" class="btn" id="ContactFormSubmitBtn" disabled><i class="fa-solid fa-floppy-disk"></i> Submit</button>
+                            <button type="submit" class="btn" id="ContactFormSubmitBtn" disabled><i class="fa-solid fa-floppy-disk"></i> Send Message</button>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
+        <!--'Contact' Section End-->
         <footer id="PageFooter">
             <span class="footer-title">Mahesh Kumaar <span style="color: #ed8805;">Balaji</span></span>
             <span class="footer-span">Software Engineer</span>
